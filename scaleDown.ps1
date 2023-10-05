@@ -4,12 +4,14 @@
 
 # Import the System.Drawing assembly
 Add-Type -AssemblyName System.Drawing
+$width = 800
+$jpgQuality = 80
 
 # Function to resize an image with default parameters and custom output filename in JPEG format
 function ScaleDown {
     param(
         [string]$inputFile,
-        [int]$newWidth = 800   # Default width
+        [int]$newWidth = $width   # Default width
     )
 	
 	Write-Host 'Hello, func'
@@ -34,7 +36,7 @@ function ScaleDown {
     # Save the resized image with the custom output filename in JPEG format
     $jpegEncoder = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.FormatID -eq [System.Drawing.Imaging.ImageFormat]::JPEG.Guid }
     $encoderParams = New-Object System.Drawing.Imaging.EncoderParameters(1)
-    $encoderParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter([System.Drawing.Imaging.Encoder]::Quality, 90)  # Adjust JPEG quality as needed (0-100)
+    $encoderParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter([System.Drawing.Imaging.Encoder]::Quality, $jpgQuality)  # Adjust JPEG quality as needed (0-100)
 
     $newImage.Save($outputFile, $jpegEncoder, $encoderParams)
 
