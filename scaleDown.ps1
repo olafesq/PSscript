@@ -4,6 +4,7 @@
 
 # Import the System.Drawing assembly
 Add-Type -AssemblyName System.Drawing
+
 $width = 800
 $jpgQuality = 80
 
