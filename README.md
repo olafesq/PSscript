@@ -9,3 +9,5 @@ The witdth can easily be adjusted in the script.
 
 Notice to change the path to the scaleDown.ps1 script location with the location you saved to script!
 
+Enjoy!
+
