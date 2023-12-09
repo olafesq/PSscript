@@ -1,4 +1,4 @@
-# PSscript
+# Power Shell image scale down script
 A powershell script to add right-mouse-click context menu item named ScaleDown that converts any picture to a 800px width JPEG.  \
 The witdth can easily be adjusted in the script.
 
